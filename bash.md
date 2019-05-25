@@ -1,12 +1,12 @@
-### Taring
+### Tar-ing
 ```console
 # Untar
 $ tar -xvzf filename.tar.gz
 ```
--z  decompress uzing gzip
--x  extract 
--v  verbose
--f  filename (followed by filename)
+-z  decompress uzing gzip <br>
+-x  extract <br>
+-v  verbose <br>
+-f  filename (followed by filename) <br>
 
 
 ### Path manipulation
