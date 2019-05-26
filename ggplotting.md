@@ -21,7 +21,7 @@ ggplot(df, aes(x=x, y=y)) +
           panel.grid.major.y = element_blank())   # y major
 ```
 
-##Add space between facet panels
+## Add space between facet panels
 ```R
 ggplot(df, aes(x=x, y=y)) +
     theme(panel.spacing.x = unit(4,"mm"))
