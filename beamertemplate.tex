@@ -107,13 +107,13 @@
 
 \section{Introduction}
 
-\begin{frame}{Template-Free Protein Structure Prediction}
+\begin{frame}[noframenumbering]{A secret non-numbered slide}
   \begin{itemize}
 \setlength\itemsep{1em}  % change space between items
+\item This slide is ignored by the slide numbering bottom right - a secret extra slide
 \item Current structure prediction heuristics are limited by the enormous conformational search space
 \item Proteins adopt their native structures \textit{in vivo} by searching  conformational space very efficiently
 \item Biologically-inspired sequential prediction has improved protein structure prediction
-\item Blah blah   
 \end{itemize}
 \end{frame}
 
@@ -121,7 +121,7 @@
 %\tiny{Englander, S.W., Mayne, L., 2014. The nature of protein folding pathways. Proc. Natl. Acad. Sci. U. S. A. 111, 15873–80.}
 
 
-\begin{frame}{Figure-on-top slide example}
+\begin{frame}{Figure-on-top slide example, with ``new" label}
   \new
   \centering
   \includegraphics[width=0.5\textwidth]{2OKQA.png}
@@ -131,11 +131,12 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Figure on one side slide example}
+\begin{frame}{Figure-on-one-side slide example, with changing figure}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \centering
-      \includegraphics[width=1\textwidth]{2OKQA.png}
+      \only<1>{\includegraphics[width=1\textwidth]{2OKQA.png}}
+      \only<2>{\includegraphics[width=1\textwidth]{1SFS_A.png}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \begin{itemize}
@@ -147,7 +148,8 @@
           \item I like it 
           \item Very nice 
         \end{itemize}
-        \item Models are ranked and grouped into confidence categories
+        \only<1>{\item This figure will change on the next slide, but the slide number will be the same}
+        \only<2>{\item Great! Now I don't have to duplicate slides or scare the audience with the slide count}
       \end{itemize}
     \end{column}
   \end{columns}
