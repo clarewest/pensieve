@@ -49,3 +49,13 @@ full:   all rows in x with matching columns in y, then the rows of y that don't 
 
 ### Point shapes
 ![](http://sape.inf.usi.ch/sites/default/files/ggplot2-shape-identity.png)
+
+### Using cowplot
+[cowplot documentation](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html) 
+
+```R
+library(cowplot)
+
+fig <- plot_grid(p1, p2, labels="auto", ncol=2, rel_widths=c(0.5, 1))
+
+```
