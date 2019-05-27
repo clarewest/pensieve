@@ -46,3 +46,6 @@ inner:  only rows with matching keys in both x and y
 left:   all rows in x, adding matching columns from y
 right:  all rows in y, adding matching columns from x
 full:   all rows in x with matching columns in y, then the rows of y that don't match x.
+
+### Point shapes
+![](http://sape.inf.usi.ch/sites/default/files/ggplot2-shape-identity.png)
