@@ -30,12 +30,27 @@ $ echo ${PATH%.*}
 $ echo ${PATH%file*}
 /path/to/
 
-# Delete from shortest front patter
+# Delete from shortest front pattern
 $ echo ${PATH#/*/}
 to/file.ext
 $ echo ${PATH#/*to}
 /file.ext
 
+```
+
+### Useful inbuilt bash variables
+- $PWD
+- $$         - process id of the script (will return parent process id)
+- $BASHPID   - process id of current instance of bash (will include a subshell)
+- $HOSTNAME  - host name
+- $HOME      - home directory
+- $#         - number of arguments passed to a script
+- $!         - process id of last job run in background
+```console
+$ echo $PWD
+/path/to/currentdirectory
+$ echo ${PWD##*/}
+currentdirectory
 ```
 
 ### Cores in use per user
