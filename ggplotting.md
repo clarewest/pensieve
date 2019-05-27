@@ -39,3 +39,10 @@ ggplot(df, aes(x=x, y=y)) +
 ggplot(df, aes(x=x, y=y)) +
     theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
+
+### joining
+e.g. inner_join()
+inner:  only rows with matching keys in both x and y
+left:   all rows in x, adding matching columns from y
+right:  all rows in y, adding matching columns from x
+full:   all rows in x with matching columns in y, then the rows of y that don't match x.
