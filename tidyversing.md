@@ -1,4 +1,26 @@
-# Some ggplot2 things
+# Some tidyverse things
+
+Reading in many files with specified file extensions, and merging the results into a dataframe
+```R
+gather_files = function(extension, colnames){
+  df <- lapply(list.files(pattern = paste(".*\\.{1}",extension,"$",sep="")), FUN=read.table, col.names=colnames, stringsAsFactors=FALSE, fill=TRUE) %>% bind_rows()
+  return(df)
+}
+
+manyfiles <- list(gather_files("somefileextension", c("columnname1","columnname2")),
+                     gather_files("anotherfileextensions",c("columnname1","columnname3")))
+
+df <- Reduce(function(...) merge(..., by='columnname1', all.x=TRUE), manyfiles)
+```
+
+### joining
+e.g. inner_join()
+inner:  only rows with matching keys in both x and y
+left:   all rows in x, adding matching columns from y
+right:  all rows in y, adding matching columns from x
+full:   all rows in x with matching columns in y, then the rows of y that don't match x.
+
+# Some ggplot2 things 
 
 ### Make theme_bw() the default
 ```R
@@ -40,17 +62,11 @@ ggplot(df, aes(x=x, y=y)) +
     theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
 
-### joining
-e.g. inner_join()
-inner:  only rows with matching keys in both x and y
-left:   all rows in x, adding matching columns from y
-right:  all rows in y, adding matching columns from x
-full:   all rows in x with matching columns in y, then the rows of y that don't match x.
-
 ### Point shapes
 ![](http://sape.inf.usi.ch/sites/default/files/ggplot2-shape-identity.png)
 
-### Using cowplot
+# Using cowplot
+
 [cowplot documentation](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html) 
 
 ```R
