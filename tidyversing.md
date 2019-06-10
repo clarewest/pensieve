@@ -80,6 +80,9 @@ fig <- plot_grid(p1, p2, labels="auto", ncol=2, rel_widths=c(0.5, 1))
 
 GGpairs is useful for exploring data distributions and correlations.
 
+[GGpairs documentation](https://www.rdocumentation.org/packages/GGally/versions/1.4.0/topics/ggpairs)
+
+
 ```R
 library(tidyverse)
 library(GGally)
@@ -90,7 +93,7 @@ trainingset %>%
   ggpairs()
 
 ```
-![](figures/ggpairs.png)
+![](figures/ggpairs.png)<!-- .element height="50%" width="50%" -->
 
 Each combination of variables are plotted according to whether they are:
 
@@ -109,7 +112,7 @@ trainingset %>%
 
 ```
 
-![](figures/ggpairs_smooth.png)
+![](figures/ggpairs_smooth.png)<!-- .element height="50%" width="50%" -->
 
 Aesthetics are mapped like this:
 
@@ -125,7 +128,7 @@ trainingset %>%
 
 ```
 
-![](figures/ggpairs_colour.png)
+![](figures/ggpairs_colour.png)<!-- .element height="50%" width="50%" -->
 
 ```R
 trainingset %>% 
@@ -142,4 +145,4 @@ trainingset %>%
           )
 ```
 
-![](figures/ggpairs_modified.png)
+![](figures/ggpairs_modified.png)<!-- .element height="50%" width="50%" -->
