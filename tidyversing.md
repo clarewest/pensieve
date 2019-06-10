@@ -90,7 +90,7 @@ trainingset %>%
   ggpairs()
 
 ```
-![] ("figures/ggpairs.png")
+![](figures/ggpairs.png)
 
 Each combination of variables are plotted according to whether they are:
 
@@ -109,7 +109,7 @@ trainingset %>%
 
 ```
 
-![] ("figures/ggpairs_smooth.png")
+![](figures/ggpairs_smooth.png)
 
 Aesthetics are mapped like this:
 
@@ -125,7 +125,7 @@ trainingset %>%
 
 ```
 
-![] ("figures/ggpairs_colour.png")
+![](figures/ggpairs_colour.png)
 
 ```R
 trainingset %>% 
@@ -142,4 +142,4 @@ trainingset %>%
           )
 ```
 
-![] ("figures/ggpairs_modified.png")
+![](figures/ggpairs_modified.png)
