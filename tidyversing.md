@@ -75,3 +75,71 @@ library(cowplot)
 fig <- plot_grid(p1, p2, labels="auto", ncol=2, rel_widths=c(0.5, 1))
 
 ```
+
+# ggpairs for correlation plots
+
+GGpairs is useful for exploring data distributions and correlations.
+
+```R
+library(tidyverse)
+library(GGally)
+trainingset = read.table("https://raw.githubusercontent.com/clarewest/RFQAmodel/master/data/RFQAmodel_training.txt", header=TRUE, stringsAsFactors=FALSE)
+trainingset %>% 
+  filter(Target=="2OBA_B") %>% 
+  select(EigenTHREADER, SAINT2, TMScore) %>%
+  ggpairs()
+
+```
+![] ("figures/ggpairs.png")
+
+Each combination of variables are plotted according to whether they are:
+
+- continuous: e.g. points (lower default), smooth, density, cor (upper default), or ignored ("blank")
+- combo: e.g. "box_no_facet" (upper default), dot, facetdeinsity, denstrip, or ignored ("blank")
+- discrete: e.g. facetbar (default), ratio, or ignored ("blank")
+
+Plots in the upper and lower triangles and the diagonal are modified separately. The options and parameters are passed to each as a list.
+
+```R
+
+trainingset %>% 
+  filter(Target=="2OBA_B") %>% 
+  select(EigenTHREADER, SAINT2, TMScore) %>%
+  ggpairs(., lower = list(continuous = wrap("smooth", alpha = 0.3, size=0.1)))
+
+```
+
+![] ("figures/ggpairs_smooth.png")
+
+Aesthetics are mapped like this:
+
+
+```R
+
+trainingset %>% 
+  filter(Target %in% c("2OBA_B","3HSB_D")) %>% 
+  select(Target, EigenTHREADER, SAINT2, TMScore) %>%
+  ggpairs(., 
+          mapping = ggplot2::aes(colour=Target), 
+          lower = list(continuous = wrap("smooth", alpha = 0.3, size=0.1)))
+
+```
+
+![] ("figures/ggpairs_colour.png")
+
+```R
+trainingset %>% 
+  filter(Target %in% c("2OBA_B","3HSB_D")) %>% 
+  select(Target, EigenTHREADER, SAINT2, TMScore) %>%
+  ggpairs(., 
+          mapping = ggplot2::aes(colour=Target), 
+          lower = list(continuous = wrap("smooth", alpha = 0.3, size=0.1), 
+                       discrete = "blank", combo="blank"), 
+          diag = list(discrete="barDiag", 
+                      continuous = wrap("densityDiag", alpha=0.5)), 
+          upper = list(combo = wrap("box_no_facet", alpha=0.5)))
+                       
+          )
+```
+
+![] ("figures/ggpairs_modified.png")
