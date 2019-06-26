@@ -38,6 +38,27 @@ $ echo ${PATH#/*to}
 
 ```
 
+### Useful sed commands
+
+```bash
+# delete lines containing pattern
+sed '/pattern/d' file.txt
+
+# keep backup called file.txt.backup when modifying in place
+sed -i.backup 's/pattern/replacement/' 
+
+
+```
+
+### Using grep as a conditional 
+```bash 
+if echo $PATTERN | grep -q file.txt; then 
+  echo "Match"
+fi 
+
+```
+
+
 ### Useful inbuilt bash variables
 - $PWD
 - $$         - process id of the script (will return parent process id)
