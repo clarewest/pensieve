@@ -47,6 +47,13 @@ sed '/pattern/d' file.txt
 # keep backup called file.txt.backup when modifying in place
 sed -i.backup 's/pattern/replacement/' 
 
+### awk: Condition on field containing a match
+```
+
+awk '{ if ($2 ~ /pattern/) print $0 }'
+awk '{ if ($2 ~ /pattern|alternative/ ) print $0}'
+
+```
 
 ```
 
